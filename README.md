@@ -1,13 +1,13 @@
 # DesignPatternsPHP
 
-[![Build Status](https://travis-ci.org/domnikl/DesignPatternsPHP.svg?branch=master)](https://travis-ci.org/domnikl/DesignPatternsPHP)
+[![Build Status](https://github.com/domnikl/DesignPatternsPHP/workflows/CI/badge.svg)](https://github.com/domnikl/DesignPatternsPHP/actions)
 [![Documentation Status](https://readthedocs.org/projects/designpatternsphp/badge/?version=latest)](https://readthedocs.org/projects/designpatternsphp/?badge=latest)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/DominikLiebler)
 
 [Read the Docs of DesignPatternsPHP](http://designpatternsphp.readthedocs.org)
 or [Download as PDF/Epub](https://readthedocs.org/projects/designpatternsphp/downloads/)
 
-This is a collection of known design patterns and some sample code how to implement them in PHP. Every pattern has a small list of examples (most of them from Zend Framework, Symfony2 or Doctrine2 as I'm most familiar with this software).
+This is a collection of known design patterns and some sample codes on how to implement them in PHP. Every pattern has a small list of examples.
 
 I think the problem with patterns is that often people do know them but don't know when to apply which.
 
@@ -27,22 +27,23 @@ To run the tests use `phpunit`:
 $ ./vendor/bin/phpunit
 ```
 
-## using Docker (optional)
+## Using Docker (optional)
 
 You can optionally build and browse the documentation using [Docker for Mac, Windows or Linux](https://docs.docker.com/compose/install/).
 
 Just run:
 
 ```bash
-$ docker-compose up
+$ docker-compose up --build
 ```
 
-Go to [http://localhost:8080/README.html](http://localhost:8080/README.html) to read the generated documentation.
+Go to [http://localhost:8080/](http://localhost:8080/) to read the generated documentation.
 
-To only install the dependencies, use `docker-compose` like this:
+If you want to localize your documentation you can pass the locale as an argument to the docker build:
 
 ```bash
-$ docker-compose run php php composer.phar install
+$ docker-compose build --build-arg language=de
+$ docker-compose up
 ```
 
 ## Patterns
@@ -54,11 +55,10 @@ The patterns can be structured in roughly three different categories. Please cli
 * [AbstractFactory](Creational/AbstractFactory) [:notebook:](http://en.wikipedia.org/wiki/Abstract_factory_pattern)
 * [Builder](Creational/Builder) [:notebook:](http://en.wikipedia.org/wiki/Builder_pattern)
 * [FactoryMethod](Creational/FactoryMethod) [:notebook:](http://en.wikipedia.org/wiki/Factory_method_pattern)
-* [Multiton](Creational/Multiton) (is considered an anti-pattern! :no_entry:)
 * [Pool](Creational/Pool) [:notebook:](http://en.wikipedia.org/wiki/Object_pool_pattern)
 * [Prototype](Creational/Prototype) [:notebook:](http://en.wikipedia.org/wiki/Prototype_pattern)
 * [SimpleFactory](Creational/SimpleFactory)
-* [Singleton](Creational/Singleton) [:notebook:](http://en.wikipedia.org/wiki/Singleton_pattern) (is considered an anti-pattern! :no_entry:)
+* [Singleton](Creational/Singleton) [:notebook:](http://en.wikipedia.org/wiki/Singleton_pattern)
 * [StaticFactory](Creational/StaticFactory)
 
 ### [Structural](Structural)
@@ -92,12 +92,24 @@ The patterns can be structured in roughly three different categories. Please cli
 
 ### [More](More)
 
-* [ServiceLocator](More/ServiceLocator) [:notebook:](http://en.wikipedia.org/wiki/Service_locator_pattern) (is considered an anti-pattern! :no_entry:)
-* [Repository](More/Repository)
 * [EAV](More/EAV) [:notebook:](https://en.wikipedia.org/wiki/Entity%E2%80%93attribute%E2%80%93value_model)
+* [Repository](More/Repository)
+* [ServiceLocator](More/ServiceLocator) [:notebook:](http://en.wikipedia.org/wiki/Service_locator_pattern)
 
-## Contribute
+## Localization & Supported Languages
 
-If you encounter any bugs or missing translations, please feel free to fork and send a pull request with your changes.
-To establish a consistent code quality, please check your code using [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) against [PSR2 standard](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) using `./vendor/bin/phpcs -p --standard=PSR2 --ignore=vendor .`.
-
+| Code  | Language  |    Documentation   |
+| ------------------|-------------|------|
+| ca    | Catalan   | [Docs :notebook:](https://designpatternsphp.readthedocs.io/ca/latest/README.html) |
+| zh_CN | Chinese   | [Docs :notebook:](https://designpatternsphp.readthedocs.io/zh_CN/latest/README.html) |
+| nl    | Dutch     | [Docs :notebook:](https://designpatternsphp.readthedocs.io/nl/latest/README.html) |
+| en    | English   | [Docs :notebook:](https://designpatternsphp.readthedocs.io/en/latest/README.html) |
+| de    | German    | [Docs :notebook:](https://designpatternsphp.readthedocs.io/de/latest/README.html) |
+| ja    | Japanese  | [Docs :notebook:](https://designpatternsphp.readthedocs.io/ja/latest/README.html) |
+| pl    | Polish    | [Docs :notebook:](https://designpatternsphp.readthedocs.io/pl/latest/README.html) |
+| pt_BR | Portuguese-Brazil | [Docs :notebook:](https://designpatternsphp.readthedocs.io/pt_BR/latest/README.html) |
+| ru    | Russian   | [Docs :notebook:](https://designpatternsphp.readthedocs.io/ru/latest/README.html) |
+| es    | Spanish   | [Docs :notebook:](https://designpatternsphp.readthedocs.io/es/latest/README.html) |
+| es_MX | Spanish-Mexican | [Docs :notebook:](https://designpatternsphp.readthedocs.io/es_MX/latest/README.html) |
+| tr    | Turkish   | [Docs :notebook:](https://designpatternsphp.readthedocs.io/tr/latest/README.html) |
+| bg    | Bulgarian | [Docs :notebook:](https://designpatternsphp.readthedocs.io/bg/latest/README.html) |
